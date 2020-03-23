@@ -26,7 +26,7 @@ namespace DatingAppPro
                 catch (Exception ex)
                 {
                     var logger = services.GetRequiredService<ILogger<Program>>();
-                    logger.LogError(ex, "An error occured duing migration");
+                    logger.LogError(ex, "An error occured duing the migration");
                 }
             }
 
