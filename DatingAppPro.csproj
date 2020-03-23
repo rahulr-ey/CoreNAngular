@@ -1,0 +1,249 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <TypeScriptCompileBlocked>true</TypeScriptCompileBlocked>
+    <TypeScriptToolsVersion>Latest</TypeScriptToolsVersion>
+    <IsPackable>false</IsPackable>
+    <SpaRoot>ClientApp\</SpaRoot>
+    <DefaultItemExcludes>$(DefaultItemExcludes);$(SpaRoot)node_modules\**</DefaultItemExcludes>
+
+    <!-- Set this to true if you enable server-side prerendering -->
+    <BuildServerSideRenderer>false</BuildServerSideRenderer>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="7.0.0" />
+    <PackageReference Include="CloudinaryDotNet" Version="1.10.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="3.1.2" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="3.1.2" />
+    <PackageReference Include="Microsoft.AspNetCore.SpaServices.Extensions" Version="3.1.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.1.2">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="3.1.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.2">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- Don't publish the SPA source files, but do show them in the project files list -->
+    <Content Remove="$(SpaRoot)**" />
+    <None Remove="$(SpaRoot)**" />
+    <None Include="$(SpaRoot)**" Exclude="$(SpaRoot)node_modules\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Migrations\20200310044927_ExtendedUserClass.cs" />
+    <Compile Remove="Migrations\20200310044927_ExtendedUserClass.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="ClientApp\src\app\routes.ts" />
+    <None Remove="ClientApp\src\app\_guards\prevent-unsaved-changes.guard.ts" />
+    <None Remove="ClientApp\src\app\_models\photo.ts" />
+    <None Remove="ClientApp\src\app\_models\user.ts" />
+    <None Remove="ClientApp\src\app\_resolvers\member-detail-resolver.ts" />
+    <None Remove="ClientApp\src\app\_resolvers\member-edit-resolver.ts" />
+    <None Remove="ClientApp\src\app\_resolvers\member-list-resolver.ts" />
+    <None Remove="ClientApp\src\app\_services\error.interceptor.ts" />
+    <None Remove="ClientApp\src\typings.d.ts" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="node_modules\alertifyjs\build\css\alertify.css" />
+    <Content Include="node_modules\alertifyjs\build\css\alertify.min.css" />
+    <Content Include="node_modules\alertifyjs\build\css\alertify.rtl.css" />
+    <Content Include="node_modules\alertifyjs\build\css\alertify.rtl.min.css" />
+    <Content Include="node_modules\alertifyjs\build\css\themes\bootstrap.css" />
+    <Content Include="node_modules\alertifyjs\build\css\themes\bootstrap.min.css" />
+    <Content Include="node_modules\alertifyjs\build\css\themes\bootstrap.rtl.css" />
+    <Content Include="node_modules\alertifyjs\build\css\themes\bootstrap.rtl.min.css" />
+    <Content Include="node_modules\alertifyjs\build\css\themes\default.css" />
+    <Content Include="node_modules\alertifyjs\build\css\themes\default.min.css" />
+    <Content Include="node_modules\alertifyjs\build\css\themes\default.rtl.css" />
+    <Content Include="node_modules\alertifyjs\build\css\themes\default.rtl.min.css" />
+    <Content Include="node_modules\alertifyjs\build\css\themes\semantic.css" />
+    <Content Include="node_modules\alertifyjs\build\css\themes\semantic.min.css" />
+    <Content Include="node_modules\alertifyjs\build\css\themes\semantic.rtl.css" />
+    <Content Include="node_modules\alertifyjs\build\css\themes\semantic.rtl.min.css" />
+    <Content Include="node_modules\alertifyjs\package.json" />
+    <Content Include="node_modules\angular-font-awesome\dist\angular-font-awesome.metadata.json" />
+    <Content Include="node_modules\angular-font-awesome\dist\package.json" />
+    <Content Include="node_modules\angular-font-awesome\out-tsc\lib-es2015\angular-font-awesome.metadata.json" />
+    <Content Include="node_modules\angular-font-awesome\out-tsc\lib-es5\angular-font-awesome.metadata.json" />
+    <Content Include="node_modules\angular-font-awesome\out-tsc\lib\src\component\angular-font-awesome.component.css" />
+    <Content Include="node_modules\angular-font-awesome\out-tsc\lib\src\component\angular-font-awesome.component.html" />
+    <Content Include="node_modules\angular-font-awesome\out-tsc\lib\tsconfig.es5.json" />
+    <Content Include="node_modules\angular-font-awesome\out-tsc\lib\tsconfig.lib.json" />
+    <Content Include="node_modules\angular-font-awesome\out-tsc\lib\tsconfig.spec.json" />
+    <Content Include="node_modules\angular-font-awesome\package.json" />
+    <Content Include="node_modules\font-awesome\css\font-awesome.css" />
+    <Content Include="node_modules\font-awesome\css\font-awesome.min.css" />
+    <Content Include="node_modules\font-awesome\fonts\fontawesome-webfont.eot" />
+    <Content Include="node_modules\font-awesome\fonts\fontawesome-webfont.ttf" />
+    <Content Include="node_modules\font-awesome\fonts\fontawesome-webfont.woff" />
+    <Content Include="node_modules\font-awesome\fonts\FontAwesome.otf" />
+    <Content Include="node_modules\font-awesome\HELP-US-OUT.txt" />
+    <Content Include="node_modules\font-awesome\package.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="node_modules\alertifyjs\.jshintrc" />
+    <None Include="node_modules\alertifyjs\build\alertify.js" />
+    <None Include="node_modules\alertifyjs\build\alertify.min.js" />
+    <None Include="node_modules\alertifyjs\build\alertifyjs.zip" />
+    <None Include="node_modules\alertifyjs\CONTRIBUTING.md" />
+    <None Include="node_modules\alertifyjs\Gruntfile.js" />
+    <None Include="node_modules\alertifyjs\LICENSE" />
+    <None Include="node_modules\alertifyjs\README.md" />
+    <None Include="node_modules\alertifyjs\RELEASENOTES.md" />
+    <None Include="node_modules\alertifyjs\src\js\alert.js" />
+    <None Include="node_modules\alertifyjs\src\js\alertify.js" />
+    <None Include="node_modules\alertifyjs\src\js\confirm.js" />
+    <None Include="node_modules\alertifyjs\src\js\dialog\actions.js" />
+    <None Include="node_modules\alertifyjs\src\js\dialog\commands.js" />
+    <None Include="node_modules\alertifyjs\src\js\dialog\dialog.js" />
+    <None Include="node_modules\alertifyjs\src\js\dialog\events.js" />
+    <None Include="node_modules\alertifyjs\src\js\dialog\focus.js" />
+    <None Include="node_modules\alertifyjs\src\js\dialog\intro.js" />
+    <None Include="node_modules\alertifyjs\src\js\dialog\move.js" />
+    <None Include="node_modules\alertifyjs\src\js\dialog\outro.js" />
+    <None Include="node_modules\alertifyjs\src\js\dialog\resize.js" />
+    <None Include="node_modules\alertifyjs\src\js\dialog\transition.js" />
+    <None Include="node_modules\alertifyjs\src\js\event.js" />
+    <None Include="node_modules\alertifyjs\src\js\intro.js" />
+    <None Include="node_modules\alertifyjs\src\js\notifier.js" />
+    <None Include="node_modules\alertifyjs\src\js\outro.js" />
+    <None Include="node_modules\alertifyjs\src\js\prompt.js" />
+    <None Include="node_modules\alertifyjs\src\less\alertify.less" />
+    <None Include="node_modules\alertifyjs\src\less\themes\bootstrap.less" />
+    <None Include="node_modules\alertifyjs\src\less\themes\default.less" />
+    <None Include="node_modules\alertifyjs\src\less\themes\semantic.less" />
+    <None Include="node_modules\angular-font-awesome\.npmignore" />
+    <None Include="node_modules\angular-font-awesome\CHANGELOG.md" />
+    <None Include="node_modules\angular-font-awesome\dist\angular-font-awesome.es5.js" />
+    <None Include="node_modules\angular-font-awesome\dist\angular-font-awesome.js" />
+    <None Include="node_modules\angular-font-awesome\dist\bundles\angular-font-awesome.umd.js" />
+    <None Include="node_modules\angular-font-awesome\dist\bundles\angular-font-awesome.umd.min.js" />
+    <None Include="node_modules\angular-font-awesome\dist\LICENSE" />
+    <None Include="node_modules\angular-font-awesome\dist\README.md" />
+    <None Include="node_modules\angular-font-awesome\LICENSE" />
+    <None Include="node_modules\angular-font-awesome\out-tsc\lib-es2015\angular-font-awesome.js" />
+    <None Include="node_modules\angular-font-awesome\out-tsc\lib-es2015\index.js" />
+    <None Include="node_modules\angular-font-awesome\out-tsc\lib-es2015\src\angular-font-awesome.module.js" />
+    <None Include="node_modules\angular-font-awesome\out-tsc\lib-es2015\src\component\angular-font-awesome.component.js" />
+    <None Include="node_modules\angular-font-awesome\out-tsc\lib-es2015\src\service\angular-font-awesome.service.js" />
+    <None Include="node_modules\angular-font-awesome\out-tsc\lib-es5\angular-font-awesome.js" />
+    <None Include="node_modules\angular-font-awesome\out-tsc\lib-es5\index.js" />
+    <None Include="node_modules\angular-font-awesome\out-tsc\lib-es5\src\angular-font-awesome.module.js" />
+    <None Include="node_modules\angular-font-awesome\out-tsc\lib-es5\src\component\angular-font-awesome.component.js" />
+    <None Include="node_modules\angular-font-awesome\out-tsc\lib-es5\src\service\angular-font-awesome.service.js" />
+    <None Include="node_modules\angular-font-awesome\README.md" />
+    <None Include="node_modules\font-awesome\.npmignore" />
+    <None Include="node_modules\font-awesome\css\font-awesome.css.map" />
+    <None Include="node_modules\font-awesome\fonts\fontawesome-webfont.svg" />
+    <None Include="node_modules\font-awesome\fonts\fontawesome-webfont.woff2" />
+    <None Include="node_modules\font-awesome\less\animated.less" />
+    <None Include="node_modules\font-awesome\less\bordered-pulled.less" />
+    <None Include="node_modules\font-awesome\less\core.less" />
+    <None Include="node_modules\font-awesome\less\fixed-width.less" />
+    <None Include="node_modules\font-awesome\less\font-awesome.less" />
+    <None Include="node_modules\font-awesome\less\icons.less" />
+    <None Include="node_modules\font-awesome\less\larger.less" />
+    <None Include="node_modules\font-awesome\less\list.less" />
+    <None Include="node_modules\font-awesome\less\mixins.less" />
+    <None Include="node_modules\font-awesome\less\path.less" />
+    <None Include="node_modules\font-awesome\less\rotated-flipped.less" />
+    <None Include="node_modules\font-awesome\less\screen-reader.less" />
+    <None Include="node_modules\font-awesome\less\stacked.less" />
+    <None Include="node_modules\font-awesome\less\variables.less" />
+    <None Include="node_modules\font-awesome\README.md" />
+    <None Include="node_modules\font-awesome\scss\font-awesome.scss" />
+    <None Include="node_modules\font-awesome\scss\_animated.scss" />
+    <None Include="node_modules\font-awesome\scss\_bordered-pulled.scss" />
+    <None Include="node_modules\font-awesome\scss\_core.scss" />
+    <None Include="node_modules\font-awesome\scss\_fixed-width.scss" />
+    <None Include="node_modules\font-awesome\scss\_icons.scss" />
+    <None Include="node_modules\font-awesome\scss\_larger.scss" />
+    <None Include="node_modules\font-awesome\scss\_list.scss" />
+    <None Include="node_modules\font-awesome\scss\_mixins.scss" />
+    <None Include="node_modules\font-awesome\scss\_path.scss" />
+    <None Include="node_modules\font-awesome\scss\_rotated-flipped.scss" />
+    <None Include="node_modules\font-awesome\scss\_screen-reader.scss" />
+    <None Include="node_modules\font-awesome\scss\_stacked.scss" />
+    <None Include="node_modules\font-awesome\scss\_variables.scss" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <TypeScriptCompile Include="ClientApp\src\app\routes.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\_guards\prevent-unsaved-changes.guard.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\_models\photo.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\_models\user.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\_resolvers\member-edit-resolver.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ClientApp\src\app\_resolvers\member-list-resolver.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ClientApp\src\app\_resolvers\member-detail-resolver.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\_services\error.interceptor.ts" />
+    <TypeScriptCompile Include="ClientApp\src\typings.d.ts" />
+    <TypeScriptCompile Include="node_modules\angular-font-awesome\dist\angular-font-awesome.d.ts" />
+    <TypeScriptCompile Include="node_modules\angular-font-awesome\dist\index.d.ts" />
+    <TypeScriptCompile Include="node_modules\angular-font-awesome\dist\src\angular-font-awesome.module.d.ts" />
+    <TypeScriptCompile Include="node_modules\angular-font-awesome\dist\src\component\angular-font-awesome.component.d.ts" />
+    <TypeScriptCompile Include="node_modules\angular-font-awesome\dist\src\service\angular-font-awesome.service.d.ts" />
+    <TypeScriptCompile Include="node_modules\angular-font-awesome\out-tsc\lib-es2015\angular-font-awesome.d.ts" />
+    <TypeScriptCompile Include="node_modules\angular-font-awesome\out-tsc\lib-es2015\index.d.ts" />
+    <TypeScriptCompile Include="node_modules\angular-font-awesome\out-tsc\lib-es2015\src\angular-font-awesome.module.d.ts" />
+    <TypeScriptCompile Include="node_modules\angular-font-awesome\out-tsc\lib-es2015\src\component\angular-font-awesome.component.d.ts" />
+    <TypeScriptCompile Include="node_modules\angular-font-awesome\out-tsc\lib-es2015\src\service\angular-font-awesome.service.d.ts" />
+    <TypeScriptCompile Include="node_modules\angular-font-awesome\out-tsc\lib-es5\angular-font-awesome.d.ts" />
+    <TypeScriptCompile Include="node_modules\angular-font-awesome\out-tsc\lib-es5\index.d.ts" />
+    <TypeScriptCompile Include="node_modules\angular-font-awesome\out-tsc\lib-es5\src\angular-font-awesome.module.d.ts" />
+    <TypeScriptCompile Include="node_modules\angular-font-awesome\out-tsc\lib-es5\src\component\angular-font-awesome.component.d.ts" />
+    <TypeScriptCompile Include="node_modules\angular-font-awesome\out-tsc\lib-es5\src\service\angular-font-awesome.service.d.ts" />
+    <TypeScriptCompile Include="node_modules\angular-font-awesome\out-tsc\lib\index.ts" />
+    <TypeScriptCompile Include="node_modules\angular-font-awesome\out-tsc\lib\src\angular-font-awesome.module.ts" />
+    <TypeScriptCompile Include="node_modules\angular-font-awesome\out-tsc\lib\src\component\angular-font-awesome.component.spec.ts" />
+    <TypeScriptCompile Include="node_modules\angular-font-awesome\out-tsc\lib\src\component\angular-font-awesome.component.ts" />
+    <TypeScriptCompile Include="node_modules\angular-font-awesome\out-tsc\lib\src\service\angular-font-awesome.service.spec.ts" />
+    <TypeScriptCompile Include="node_modules\angular-font-awesome\out-tsc\lib\src\service\angular-font-awesome.service.ts" />
+    <TypeScriptCompile Include="node_modules\angular-font-awesome\out-tsc\lib\typings.d.ts" />
+  </ItemGroup>
+
+  <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">
+    <!-- Ensure Node.js is installed -->
+    <Exec Command="node --version" ContinueOnError="true">
+      <Output TaskParameter="ExitCode" PropertyName="ErrorCode" />
+    </Exec>
+    <Error Condition="'$(ErrorCode)' != '0'" Text="Node.js is required to build and run this project. To continue, please install Node.js from https://nodejs.org/, and then restart your command prompt or IDE." />
+    <Message Importance="high" Text="Restoring dependencies using 'npm'. This may take several minutes..." />
+    <Exec WorkingDirectory="$(SpaRoot)" Command="npm install" />
+  </Target>
+
+  <Target Name="PublishRunWebpack" AfterTargets="ComputeFilesToPublish">
+    <!-- As part of publishing, ensure the JS resources are freshly built in production mode -->
+    <Exec WorkingDirectory="$(SpaRoot)" Command="npm install" />
+    <Exec WorkingDirectory="$(SpaRoot)" Command="npm run build -- --prod" />
+    <Exec WorkingDirectory="$(SpaRoot)" Command="npm run build:ssr -- --prod" Condition=" '$(BuildServerSideRenderer)' == 'true' " />
+
+    <!-- Include the newly-built files in the publish output -->
+    <ItemGroup>
+      <DistFiles Include="$(SpaRoot)dist\**; $(SpaRoot)dist-server\**" />
+      <DistFiles Include="$(SpaRoot)node_modules\**" Condition="'$(BuildServerSideRenderer)' == 'true'" />
+      <ResolvedFileToPublish Include="@(DistFiles->'%(FullPath)')" Exclude="@(ResolvedFileToPublish)">
+        <RelativePath>%(DistFiles.Identity)</RelativePath>
+        <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+        <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      </ResolvedFileToPublish>
+    </ItemGroup>
+  </Target>
+
+</Project>
